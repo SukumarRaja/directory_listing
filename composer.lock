@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56541217ad018c23b936fab41df0816d",
+    "content-hash": "ebfb148640a0df9882b5f7d5841aea0f",
     "packages": [
         {
             "name": "brick/math",
@@ -6187,6 +6187,44 @@
                 "source": "https://github.com/laravel/sail"
             },
             "time": "2023-08-07T13:01:51+00:00"
+        },
+        {
+            "name": "maestroerror/html-strings-affixer",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MaestroError/html-strings-affixer.git",
+                "reference": "207961a790fc3562ac002e79e94231d2a434b7fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MaestroError/html-strings-affixer/zipball/207961a790fc3562ac002e79e94231d2a434b7fc",
+                "reference": "207961a790fc3562ac002e79e94231d2a434b7fc",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/composer-adapter/hsawin",
+                "bin/hsa",
+                "bin/hsamac",
+                "bin/hsamacm1"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "maestroerror",
+                    "email": "revaz.gh@gmail.com"
+                }
+            ],
+            "description": "Finds texts in HTML and replaces it with suffixed and prefixed string",
+            "support": {
+                "issues": "https://github.com/MaestroError/html-strings-affixer/issues",
+                "source": "https://github.com/MaestroError/html-strings-affixer/tree/1.2.1"
+            },
+            "time": "2023-03-27T18:22:36+00:00"
         },
         {
             "name": "maximebf/debugbar",
