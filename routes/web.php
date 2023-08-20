@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Auth\LoginController;
 use App\Http\Controllers\Web\Auth\LogoutController;
 use App\Http\Controllers\Web\Auth\RegisterController;
@@ -29,6 +30,8 @@ Route::middleware('guest')->group(function () {
     Route::controller(LoginController::class)->prefix('login')->group(function () {
         Route::post('/', 'store')->name('login');
     });
+
+    Route::get('/login', [HomeController::class, 'index'])->name('login.home');
 });
 
 Route::middleware('auth')->group(function () {
@@ -37,13 +40,22 @@ Route::middleware('auth')->group(function () {
     Route::controller(LogoutController::class)->prefix('logout')->group(function () {
         Route::delete('/', 'destroy')->name('logout');
     });
-});
 
-// User
-Route::name('user.')->group(function () {
+    // User
+    Route::name('user.')->group(function () {
 
-    // Home
-    Route::controller(HomeController::class)->name('home.')->group(function () {
-        Route::get('/', 'index')->name('index');
+        // Home
+        Route::controller(HomeController::class)->name('home.')->group(function () {
+            Route::get('/', 'index')->name('index');
+        });
+    });
+
+    // Admin
+    Route::prefix('app')->name('admin.')->group(function () {
+
+        // Dashboard
+        Route::controller(DashboardController::class)->prefix('dashboard')->name('dashboard.')->group(function () {
+            Route::get('/', 'index')->name('index');
+        });
     });
 });

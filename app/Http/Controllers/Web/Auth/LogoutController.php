@@ -19,7 +19,7 @@ class LogoutController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('login')->with(
+        return redirect()->route('user.home.index')->with(
             TOAST,
             [
                 'status' => SUCCESS,

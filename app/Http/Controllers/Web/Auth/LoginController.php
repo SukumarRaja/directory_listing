@@ -19,7 +19,7 @@ class LoginController extends Controller
         $credentials = [
             'email' => $request->input('email'),
             'password' => $request->input('password'),
-            'is_active' => 1,
+            // 'is_active' => 1,
         ];
 
         if (auth()->attempt($credentials, $request->filled('remember_me'))) {

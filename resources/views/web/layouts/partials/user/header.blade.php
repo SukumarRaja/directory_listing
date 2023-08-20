@@ -26,7 +26,7 @@
                                 @else
                                 <div class="account">
                                     <a href="#">
-                                        <img src="#" alt="{{ __('Profile image') }}">
+                                        <img src="{{ auth()->user()->avatar_url }}" alt="{{ __('Profile image') }}">
                                         <span>
                                             {{ auth()->user()->name }}
                                             <i class="la la-angle-down la-12"></i>
@@ -38,8 +38,8 @@
                                             <li><a href="#">{{ __('My Places') }}</a></li>
                                             <li><a href="#">{{ __('Wishlist') }}</a></li>
                                             <li>
-                                                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                                                <form id="logout-form" class="d-none" action="#" method="POST">
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                                <form id="logout-form" class="d-none" action="{{ route('logout') }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
@@ -113,7 +113,7 @@
 
                     <div class="site__brand">
                         <a href="#" class="site__brand__logo">
-                            <img src="http://localhost/golo/public/assets/images/assets/logo.png" alt="{{ __('Logo') }}">
+                            <img src="{{ asset('assets/f/demo/img/logo.png') }}" alt="{{ __('Logo') }}">
                         </a>
                     </div><!-- .site__brand -->
 
@@ -164,13 +164,13 @@
 
                     <div class="right-header__languages">
                         <a href="#">
-                            <img src="http://localhost/golo/public/assets/images/flags/en.png">
+                            <img src="{{ asset('assets/f/demo/img/flags/en.png') }}">
                             <i class="las la-angle-down la-12-black"></i>
                         </a>
                         <ul>
                             <li>
-                                <a href="http://localhost/golo/public/language/fr">
-                                    <img src="http://localhost/golo/public/assets/images/flags/fr.png">{{ __('French') }}
+                                <a href="#">
+                                    <img src="{{ asset('assets/f/demo/img/flags/fr.png') }}">{{ __('French') }}
                                 </a>
                             </li>
                         </ul>
@@ -249,9 +249,9 @@
                                     <input type="password" id="register_password" name="password" placeholder="{{ __('Password') }}" required>
                                 </div>
 
-                                <div class="field-input">
+                                <!-- <div class="field-input">
                                     <input type="password" id="register_password_confirmation" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
-                                </div>
+                                </div> -->
 
                                 <div class="field-check">
                                     <label for="accept">
@@ -286,7 +286,7 @@
                     @else
                     <div class="account">
                         <a href="#">
-                            <img src="#" alt="{{ auth()->user()->name }}">
+                            <img src="{{ auth()->user()->avatar_url }}" alt="{{ auth()->user()->name }}">
                             <span>
                                 {{ auth()->user()->name }}
                                 <i class="la la-angle-down la-12"></i>
@@ -294,13 +294,13 @@
                         </a>
                         <div class="account-sub">
                             <ul>
-                                <li class="active"><a href="#" target="_blank" rel="nofollow">{{ __('Dashboard') }}</a></li>
+                                <li class="active"><a href="{{ route('admin.dashboard.index') }}" target="_blank" rel="nofollow">{{ __('Dashboard') }}</a></li>
                                 <li><a href="#">{{ __('Profile') }}</a></li>
                                 <li><a href="#">{{ __('My Places') }}</a></li>
                                 <li><a href="#">{{ __('Wishlist') }}</a></li>
                                 <li>
-                                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                                    <form id="logout-form" class="d-none" action="#" method="POST">
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                    <form id="logout-form" class="d-none" action="{{ route('logout') }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                     </form>

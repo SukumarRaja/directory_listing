@@ -39,7 +39,7 @@
     <div id="wrapper">
 
         <!-- Header - Start -->
-        @include('web.layouts.user.header')
+        @include('web.layouts.partials.user.header')
         <!-- Header - End -->
 
         <!-- Main Content - Start -->
@@ -47,7 +47,7 @@
         <!-- Main Content - End -->
 
         <!-- Footer - Start -->
-        @include('web.layouts.user.footer')
+        @include('web.layouts.partials.user.footer')
         <!-- Footer - End -->
 
         <!-- JS -->
